@@ -24,7 +24,8 @@ public class Main {
 
     public static void manageContacts() {
         Scanner scan = new Scanner(System.in);
-        while (true) {
+        boolean value = true;
+        while (value) {
             System.out.println("Kindly choose \n\ta. add a contact \n\tb. remove a contact \n\tc. exit");
             String userChoice = scan.nextLine();
             switch (userChoice) {
@@ -50,11 +51,11 @@ public class Main {
                     System.out.println(manager);
                     continue;
                 case "c":
-                    break;
+                    value = false;
+                    // break;       
             }
-        scan.close();
         }
-        
+        scan.close();
     }
     public static void loadContacts(String fileName) throws FileNotFoundException{
         FileInputStream fis = new FileInputStream(fileName);
